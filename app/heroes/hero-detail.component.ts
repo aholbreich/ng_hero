@@ -22,10 +22,12 @@ export class HeroDetailComponent implements OnInit  {
     private _router:Router,
     private _routeParams:RouteParams,
     private _service:HeroService){}
+  
   ngOnInit() {
     let id = this._routeParams.get('id');
     this._service.getHero(id).then(hero => this.hero = hero);
   }
+  
   gotoHeroes() {
     // <a [routerLink]="['Heroes']">Heroes</a>
     this._router.navigate(['Heroes']);

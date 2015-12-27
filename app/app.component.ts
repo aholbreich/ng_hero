@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {CrisisCenterComponent} from './crisis-center/crisis-center.component';
 import {HeroListComponent}     from './heroes/hero-list.component';
 import {HeroDetailComponent}   from './heroes/hero-detail.component';
+
 @Component({
   selector: 'my-app',
   template: `
