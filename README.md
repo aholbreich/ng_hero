@@ -10,7 +10,7 @@ You will find examples of:
 * Services
 * (Auto) injection
 * Simple and Advanced Routing 
-
+* Attribute diretive example
 
 ## Usage
 
