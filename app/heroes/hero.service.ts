@@ -8,6 +8,9 @@ export class Hero {
 @Injectable()
 export class HeroService {
     
+  /**
+   * Retrunes promise
+   */
   getHeroes() { 
  /** 
  * Someday we're going to get heroes from a remote server. We don’t call http yet, but we aspire to in later chapters.

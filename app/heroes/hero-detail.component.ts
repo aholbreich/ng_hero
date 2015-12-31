@@ -1,6 +1,11 @@
 import {Component,  OnInit}  from 'angular2/core';
 import {Hero, HeroService}   from './hero.service';
 import {RouteParams, Router} from 'angular2/router';
+
+/**
+ * Show Hero details.
+ * Interesting part is routing param 'id'. See #ngOnInit below.
+ */
 @Component({
   template: `
   <h2>HEROES</h2>
@@ -18,14 +23,21 @@ import {RouteParams, Router} from 'angular2/router';
 })
 export class HeroDetailComponent implements OnInit  {
   public hero: Hero;
+  
+  /**
+   * Constructor that aoutoinjects three services.
+   */
   constructor(
     private _router:Router,
     private _routeParams:RouteParams,
-    private _service:HeroService){}
+    private _heroService:HeroService){}
   
+  /**
+   * LifeCycle hook.
+   */
   ngOnInit() {
-    let id = this._routeParams.get('id');
-    this._service.getHero(id).then(hero => this.hero = hero);
+    let id = this._routeParams.get('id'); // we extact the id that was given via url
+    this._heroService.getHero(id).then(hero => this.hero = hero);
   }
   
   gotoHeroes() {

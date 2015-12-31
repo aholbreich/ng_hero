@@ -4,6 +4,12 @@ import {CrisisCenterComponent} from './crisis-center/crisis-center.component';
 import {HeroListComponent}     from './heroes/hero-list.component';
 import {HeroDetailComponent}   from './heroes/hero-detail.component';
 
+/**
+ * Navigation is defined here.
+ * First placeholders are defined in the template.
+ * Secondly: @Route config is special construct to fill them dinamically
+ * Dont forget to define 'directives'
+ */
 @Component({
   selector: 'my-app',
   template: `
@@ -14,6 +20,10 @@ import {HeroDetailComponent}   from './heroes/hero-detail.component';
   `,
   directives: [ROUTER_DIRECTIVES]
 })
+
+/** See https://angular.io/docs/ts/latest/guide/router.html
+ * for better understanding
+ */
 @RouteConfig([
   { // Crisis Center child route
     path: '/crisis-center/...',

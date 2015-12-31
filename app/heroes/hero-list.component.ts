@@ -3,7 +3,9 @@ import {Component, OnInit}   from 'angular2/core';
 import {Hero, HeroService}   from './hero.service';
 import {Router}              from 'angular2/router';
 
-
+/**
+ * List heroes by utilizing ngFor directive.
+ */
 @Component({
   template: `
     <h2>HEROES</h2>

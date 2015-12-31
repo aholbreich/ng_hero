@@ -3,6 +3,11 @@ import {Crisis, CrisisService} from './crisis.service';
 import {RouteParams, Router} from 'angular2/router';
 import {CanDeactivate, ComponentInstruction} from 'angular2/router';
 import {DialogService} from '../dialog.service';
+
+/**
+ * Editing of Crisis detals.
+ * Interesting part:
+ */
 @Component({
   template: `
   <div *ngIf="crisis">
@@ -22,14 +27,22 @@ import {DialogService} from '../dialog.service';
 export class CrisisDetailComponent implements OnInit, CanDeactivate {
   public crisis: Crisis;
   public editName: string;
+  
+  /**
+   * Constructor injects needed services
+   */
   constructor(
     private _service: CrisisService,
     private _router: Router,
     private _routeParams: RouteParams,
     private _dialog: DialogService
     ) { }
+    
+   /**
+    * Lifecycle hook
+    */
   ngOnInit() {
-    let id = +this._routeParams.get('id');
+    let id = +this._routeParams.get('id'); //get url parameter 'id'
     this._service.getCrisis(id).then(crisis => {
       if (crisis) {
         this.editName = crisis.name;
@@ -39,6 +52,10 @@ export class CrisisDetailComponent implements OnInit, CanDeactivate {
       }
     });
   }
+  
+  /** Router Lifecycle Hook 
+   * https://angular.io/docs/ts/latest/guide/router.html
+   */
   routerCanDeactivate(next: ComponentInstruction, prev: ComponentInstruction) {
     // Allow navigation (`true`) if no crisis or the crisis is unchanged.
     // Otherwise ask the user with the dialog service and return its
@@ -47,6 +64,7 @@ export class CrisisDetailComponent implements OnInit, CanDeactivate {
            this.crisis.name === this.editName ||
            this._dialog.confirm('Discard changes?');
   }
+  
   cancel() {
     this.editName = this.crisis.name;
     this.gotoCrises();
@@ -55,9 +73,11 @@ export class CrisisDetailComponent implements OnInit, CanDeactivate {
     this.crisis.name = this.editName;
     this.gotoCrises();
   }
+  
+  
   gotoCrises() {
-    let route =
-      ['CrisisList',  {id: this.crisis ? this.crisis.id : null} ]
+    //Manual routing with params
+    let route = ['CrisisList',  {id: this.crisis ? this.crisis.id : null} ]
     this._router.navigate(route);
   }
 }
