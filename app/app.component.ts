@@ -18,6 +18,7 @@ import {HighliterComponent}    from './attribute-directive/highlight.component';
     <h1 class="title">Component Router</h1>
     <a [routerLink]="['CrisisCenter']">Crisis Center</a>
     <a [routerLink]="['Heroes']">Heroes</a>
+    <h2>Further examples</h2>
     <a [routerLink]="['Highlight']">Highlight</a>
     <router-outlet></router-outlet>
   `,
