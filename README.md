@@ -11,25 +11,30 @@ You will find examples of:
 * (Auto) injection
 * Simple and Advanced Routing 
 
-#### TODO
 
-* Tests
+## Usage
+
+### Install
 
 ```
 npm install --no-opt
 ```
 
-## Usage
-Go through the code beginnig with index.html and app/boot.ts
-
+## Run
+Go through the code beginnig with index.html and app/boot.ts. 
 
 Run it with:
 ```
 npm start
 
 ```
+This will compile Typescript and run the app in the browser. Now you can change things and see results live...
 
-See More:
+## TODO
+
+* Tests
+
+## More
 
 * [Typescript wiki](https://github.com/Microsoft/TypeScript/wiki)
 * [About me](http://alexander.holbreich.org)
