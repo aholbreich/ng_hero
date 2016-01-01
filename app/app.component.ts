@@ -5,6 +5,7 @@ import {HeroListComponent}     from './heroes/hero-list.component';
 import {HeroDetailComponent}   from './heroes/hero-detail.component';
 // import further parts
 import {HighliterComponent}    from './attribute-directive/highlight.component';
+import {StructuralDirectivesComponent} from './structural-directive/structural-directive.component';
 
 /**
  * Navigation is defined here.
@@ -19,7 +20,8 @@ import {HighliterComponent}    from './attribute-directive/highlight.component';
     <a [routerLink]="['CrisisCenter']">Crisis Center</a>
     <a [routerLink]="['Heroes']">Heroes</a>
     <h2>Further examples</h2>
-    <a [routerLink]="['Highlight']">Highlight</a>
+    <a [routerLink]="['Highlight']">Highlight (Attribute Directive)</a>
+    <a [routerLink]="['Unless']">Unless (Structural Directive)</a>
     <router-outlet></router-outlet>
   `,
   directives: [ROUTER_DIRECTIVES]
@@ -38,6 +40,8 @@ import {HighliterComponent}    from './attribute-directive/highlight.component';
   {path: '/heroes',   name: 'Heroes',     component: HeroListComponent},
   {path: '/hero/:id', name: 'HeroDetail', component: HeroDetailComponent},
   {path: '/disaster', name: 'Asteroid', redirectTo: ['CrisisCenter', 'CrisisDetail', {id:3}]},
-  {path: '/highlight', name: 'Highlight', component: HighliterComponent}
+  // Includes example of attribute directive
+  {path: '/highlight', name: 'Highlight', component: HighliterComponent},
+  {path: '/unless', name: 'Unless', component: StructuralDirectivesComponent }
 ])
 export class AppComponent { }

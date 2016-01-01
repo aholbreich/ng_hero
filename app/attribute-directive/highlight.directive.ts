@@ -7,6 +7,7 @@ import {Directive, ElementRef, Renderer, Input} from 'angular2/core';
  * The 'host' property refers to the DOM element that hosts our attribute directive
  */
 @Directive({
+    //The CSS syntax for selecting an attribute is a name in square brackets. We surround our directive name in square brackets
   selector: '[myHighlight]',
   host: {
     '(mouseenter)': 'onMouseEnter()',
@@ -16,7 +17,10 @@ import {Directive, ElementRef, Renderer, Input} from 'angular2/core';
 
 export class HighlightDirective {
   /*
-  @Input() myHighlight: string;
+  * This @Input decorator adds metadata to the class that makes the highlightColor property available for property binding under the myHighlight alias. 
+  *
+  * Alternatively:
+  * @Input() myHighlight: string;
   */
   @Input('myHighlight') highlightColor: string;
 
