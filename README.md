@@ -1,40 +1,45 @@
-## What is ng_hero
+## What ng_hero
 
-Working "Hero" Application from [Angular2.0 tutorial](https://angular.io/docs/ts/latest/tutorial/)
+Working "Hero" Application from [Angular 5.0 tutorial](https://angular.io/tutorial/toh-pt0)
 
-It includes code comments for learning purpose. 
-You will find examples of:
-
-* Components 
-* Templates
-* Services
-* (Auto) injection
-* Simple and Advanced Routing 
-* Attribute diretive example
-
-## Usage
-
-### Install
-
-```
-npm install --no-opt
-```
-
-## Run
-Go through the code beginnig with index.html and app/boot.ts. 
-
-Run it with:
-```
-npm start
-
-```
-This will compile Typescript and run the app in the browser. Now you can change things and see results live...
-
-## TODO
-
-* Tests
+## Why ng_hero
+* Learn & try
+* Comparison btw versions
+* Contains comments and extensions
 
 ## More
 
+* [Angular CLI docu] (https://github.com/angular/angular-cli/wiki)
 * [Typescript wiki](https://github.com/Microsoft/TypeScript/wiki)
 * [About me](http://alexander.holbreich.org)
+
+
+---
+
+# AngularTourOfHeroes
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
